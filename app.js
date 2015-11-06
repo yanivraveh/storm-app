@@ -3,6 +3,9 @@ var stormpath = require('express-stormpath');
 
 var app = express();
 
+//trying to get port
+app.set('port', (process.env.PORT || 5000));
+
 app.set('views', './views');
 app.set('view engine', 'jade');
 
@@ -24,4 +27,7 @@ app.get('/', function(req, res) {
 
 app.use('/profile',stormpath.loginRequired,require('./profile')());
 
-app.listen(3000);
+//app.listen(3000);
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
