@@ -1,0 +1,1 @@
+stormpath tenant: magic-guardian1
