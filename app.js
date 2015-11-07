@@ -3,6 +3,8 @@ var stormpath = require('express-stormpath');
 
 var app = express();
 
+
+
 //trying to get port
 app.set('port', (process.env.PORT || 5000));
 
@@ -18,6 +20,7 @@ var stormpathMiddleware = stormpath.init(app, {
   enableForgotPassword: true
 });
 
+
 app.use(stormpathMiddleware);
 
 app.get('/', function(req, res) {
@@ -28,15 +31,7 @@ app.get('/', function(req, res) {
 
 app.use('/profile',stormpath.loginRequired,require('./profile')());
 
-app.use(stormpath.init(app, {
-  enableGoogle: true,
-  social: {
-    google: {
-      clientId: '438370927701-vr2e6va4ljp5bjl5r4jro707lu3ume7v.apps.googleusercontent.com',
-      clientSecret: 'i_HoGP3ebOENhIX3OrbLRSvN',
-    },
-  },
-}));
+
 //app.listen(3000);
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
