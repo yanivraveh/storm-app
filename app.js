@@ -4,7 +4,6 @@ var stormpath = require('express-stormpath');
 var app = express();
 
 
-
 //trying to get port
 app.set('port', (process.env.PORT || 5000));
 
@@ -16,6 +15,13 @@ var stormpathMiddleware = stormpath.init(app, {
   apiKeyFile: 'apiKey-3C1XCR5DD3YKXK0UPKRJPK4ZV.properties',
   application: 'https://api.stormpath.com/v1/applications/7ST6geHE2SaiVYYYVKRn4s',
   secretKey: 'FGHhsdjdfgh345#$%$&sdjdsnvjd#$^&%^SGdfgDFG',
+  enableGoogle: true,
+  social: {
+    google: {
+      clientId: '438370927701-vr2e6va4ljp5bjl5r4jro707lu3ume7v.apps.googleusercontent.com',
+      clientSecret: 'i_HoGP3ebOENhIX3OrbLRSvN',
+    },
+  },
   expandCustomData: true,
   enableForgotPassword: true
 });
