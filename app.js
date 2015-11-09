@@ -12,18 +12,33 @@ app.set('view engine', 'jade');
 
 
 var stormpathMiddleware = stormpath.init(app, {
-  apiKeyFile: 'apiKey-3C1XCR5DD3YKXK0UPKRJPK4ZV.properties',
-  application: 'https://api.stormpath.com/v1/applications/7ST6geHE2SaiVYYYVKRn4s',
-  secretKey: 'FGHhsdjdfgh345#$%$&sdjdsnvjd#$^&%^SGdfgDFG',
+  //apiKeyFile: 'apiKey-3C1XCR5DD3YKXK0UPKRJPK4ZV.properties',
   enableGoogle: true,
+  website: true,
+
   social: {
     google: {
+
       clientId: '438370927701-vr2e6va4ljp5bjl5r4jro707lu3ume7v.apps.googleusercontent.com',
       clientSecret: 'i_HoGP3ebOENhIX3OrbLRSvN',
     },
   },
+//  secretKey: 'FGHhsdjdfgh345#$%$&sdjdsnvjd#$^&%^SGdfgDFG',
   expandCustomData: true,
-  enableForgotPassword: true
+  enableForgotPassword: true,
+
+  client: {
+    apiKey: {
+      id: '3C1XCR5DD3YKXK0UPKRJPK4ZV',
+      secret: '8bXqQlMr6/i86YtNMO1zgwtzayiAGDGjrd2BJ+RnkAg'
+    }
+  },
+  //application: 'https://api.stormpath.com/v1/applications/7ST6geHE2SaiVYYYVKRn4s',
+  application: {
+    href: 'https://api.stormpath.com/v1/applications/7ST6geHE2SaiVYYYVKRn4s'
+  }
+
+
 });
 
 
