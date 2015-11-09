@@ -20,7 +20,7 @@ var stormpathMiddleware = stormpath.init(app, {
     google: {
 
       clientId: '438370927701-vr2e6va4ljp5bjl5r4jro707lu3ume7v.apps.googleusercontent.com',
-      clientSecret: 'i_HoGP3ebOENhIX3OrbLRSvN',
+      clientSecret: 'xDmKU4fDW8DKCOqAPeo8iVzC',
     },
   },
 //  secretKey: 'FGHhsdjdfgh345#$%$&sdjdsnvjd#$^&%^SGdfgDFG',
