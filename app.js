@@ -19,8 +19,8 @@ var stormpathMiddleware = stormpath.init(app, {
   social: {
     google: {
 
-      clientId: '438370927701-vr2e6va4ljp5bjl5r4jro707lu3ume7v.apps.googleusercontent.com',
-      clientSecret: 'xDmKU4fDW8DKCOqAPeo8iVzC',
+      clientId: '438370927701-d67qa312p06448gual27ofvdfkhlrcu5.apps.googleusercontent.com',
+      clientSecret: '_MxhtB1qIT443hI-u9cR9oth',
     },
   },
 //  secretKey: 'FGHhsdjdfgh345#$%$&sdjdsnvjd#$^&%^SGdfgDFG',
