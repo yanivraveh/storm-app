@@ -6,7 +6,8 @@ var app = express();
 
 //trying to get port
 app.set('port', (process.env.PORT || 5000));
-app.set('trust proxy',true);
+//app.set('trust proxy',true);
+app.enable('trust proxy');
 app.set('views', './views');
 app.set('view engine', 'jade');
 
