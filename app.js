@@ -6,13 +6,14 @@ var app = express();
 
 //trying to get port
 app.set('port', (process.env.PORT || 5000));
-
+app.set('trust proxy',true);
 app.set('views', './views');
 app.set('view engine', 'jade');
 
 
 var stormpathMiddleware = stormpath.init(app, {
   //apiKeyFile: 'apiKey-3C1XCR5DD3YKXK0UPKRJPK4ZV.properties',
+
   enableGoogle: true,
   website: true,
 
