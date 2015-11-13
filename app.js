@@ -28,7 +28,10 @@ var stormpathMiddleware = stormpath.init(app, {
     },
   },
 //  secretKey: 'FGHhsdjdfgh345#$%$&sdjdsnvjd#$^&%^SGdfgDFG',
-  expandCustomData: true,
+  //expandCustomData: true,
+  expand: {
+    customData: true,
+  },
   enableForgotPassword: true,
 
   client: {
