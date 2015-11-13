@@ -4,10 +4,12 @@ var stormpath = require('express-stormpath');
 var app = express();
 
 
-//trying to get port
+//get port
 app.set('port', (process.env.PORT || 5000));
-//app.set('trust proxy',true);
-app.enable('trust proxy');
+
+app.set('trust proxy',true);
+//app.enable('trust proxy'); the same as above
+
 app.set('views', './views');
 app.set('view engine', 'jade');
 

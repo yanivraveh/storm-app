@@ -1,9 +1,10 @@
-var express = require('express');
-var forms = require('forms');
+var cookieParser = require('cookie-parser');
 var csurf = require('csurf');
-var collectFormErrors = require('express-stormpath/lib/helpers').collectFormErrors;
-var stormpath = require('express-stormpath');
+var express = require('express');
 var extend = require('xtend');
+var forms = require('forms');
+
+var collectFormErrors = require('express-stormpath/lib/helpers').collectFormErrors;
 
 // Declare the schema of our form:
 
@@ -42,7 +43,10 @@ module.exports = function profile(){
 
   var router = express.Router();
 
-  router.use(csurf({ sessionKey: 'stormpathSession' }));
+  router.use(cookieParser());
+
+  router.use(csurf({ cookie: true }));
+
 
   // Capture all requests, the form library will negotiate
   // between GET and POST requests
