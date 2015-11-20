@@ -1,0 +1,21 @@
+extends base
+
+block vars
+  - var title = 'Account Verification Email Sent'
+  - var description = 'Your account verification email has been sent!'
+  - var bodytag = 'login'
+
+block body
+  .container.custom-container
+    .va-wrapper
+      .view.login-view.container
+        .box.row
+          .email-password-area.col-xs-12.large.col-sm-12
+            .header
+              span.
+                הודעה לאימות כתובת המייל נשלחה!
+              p.
+              לפני שתוכלו להתחבר לחשבונכם, עליכם להפעיל את חשבונכם על ידי
+              לחיצה על הקישור ששלחנו לכם לכתובת המייל שלכם: <b>#{email}</b>.
+              p.
+                להמשך אנא בידקו את תיבת הדואר שלכם.

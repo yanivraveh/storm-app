@@ -5,11 +5,16 @@ html
       href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css',
       rel='stylesheet'
     )
-  body
+    style.
+      .mySubmit {
+        float: left;
+      }
+
+  body(dir='rtl')
     div.container
 
       div.page-header
-        h1 My Profile
+        h1 הפרופיל שלי
 
       if errors
         each error in errors
@@ -17,61 +22,61 @@ html
             span #{error.error}
       if saved
         div.alert.alert-success
-          span Your profile has been saved
+          span הפרופיל נשמר
       form.login-form.form-horizontal(method='post', role='form')
         input(name='_csrf', type='hidden', value=csrfToken)
 
         div.form-group
-          label.col-sm-4 First Name
           div.col-sm-8
             input.form-control(
-              placeholder='Your first name',
+              placeholder='שם פרטי',
               required=true,
               name='givenName',
               type='text',
               value=givenName)
+          label.col-sm-4 שם פרטי
         div.form-group
-          label.col-sm-4 Last Name
           div.col-sm-8
-            input.form-control(placeholder='Your last name',
+            input.form-control(placeholder='שם משפחה',
               required=true,
               name='surname',
               type='text',
               value=surname)
+          label.col-sm-4 שם משפחה
         div.form-group
-          label.col-sm-4 Street address
           div.col-sm-8
-            input.form-control(placeholder='e.g. 123 Sunny Ave',
+            input.form-control(placeholder='דוגמא: הרצל 200',
               required=true,
               name='streetAddress',
               type='text',
               value=streetAddress)
+          label.col-sm-4 רחוב
         div.form-group
-          label.col-sm-4 City
           div.col-sm-8
-            input.form-control(placeholder='e.g. City',
+            input.form-control(placeholder='לדוגמא: תל אביב',
               required=true,
               name='city',
               type='text',
               value=city)
+          label.col-sm-4 עיר
         div.form-group
-          label.col-sm-4 State
           div.col-sm-8
-            input.form-control(placeholder='e.g. CA',
+            input.form-control(placeholder='לדוגמא: ישראל',
               required=true,
               name='state',
               type='text',
               value=state)
+          label.col-sm-4 מדינה
         div.form-group
-          label.col-sm-4 ZIP
           div.col-sm-8
-            input.form-control(placeholder='e.g. 94116',
+            input.form-control(placeholder='מיקוד',
               required=true,
               name='zip',
               type='text',
               value=zip)
+          label.col-sm-4 מיקוד
         div.form-group
-          div.col-sm-offset-4.col-sm-8
-            button.login.btn.btn-primary(type='submit') Save
+          div.col-sm-8
+            button.login.btn.btn-primary(type='submit') שמור
         div.pull-right
-          a(href="/") Return to home page
+          a(href="/") בחזרה לדף הראשי

@@ -1,6 +1,6 @@
 var express = require('express');
 var stormpath = require('express-stormpath');
-
+var path = require('path');
 var app = express();
 
 
@@ -10,13 +10,14 @@ app.set('port', (process.env.PORT || 5000));
 app.set('trust proxy',true);
 //app.enable('trust proxy'); the same as above
 
+//app.set('images', './images');
+
 app.set('views', './views');
 app.set('view engine', 'jade');
 
 
 var stormpathMiddleware = stormpath.init(app, {
   //apiKeyFile: 'apiKey-3C1XCR5DD3YKXK0UPKRJPK4ZV.properties',
-
   enableGoogle: true,
   website: true,
 
@@ -27,6 +28,59 @@ var stormpathMiddleware = stormpath.init(app, {
       clientSecret: '9wPjfbx7vxHRZOvIqQ5DjZlP',
     },
   },
+
+  web: {
+    login: {
+      view: path.join(__dirname,'views','login.jade') // My custom login view
+    },
+    register: {
+      view: path.join(__dirname,'views','register.jade'), //
+      fields: {
+        givenName: {
+          placeholder: "שם פרטי"
+        },
+        username: {
+          placeholder: "שם משתמש"
+        },
+        middleName: {
+          placeholder: "שם אמצעי"
+        },
+        surname: {
+          placeholder: "שם משפחה"
+        },
+        email: {
+          placeholder: "אימייל"
+        },
+        password: {
+          placeholder: "סיסמא"
+        },
+        passwordConfirm: {
+          placeholder: "וידוא סיסמא"
+        }
+      }
+    },
+    forgotPassword: {
+      view: path.join(__dirname,'views','forgot-password.jade') //
+    },
+    changePassword: {
+      view: path.join(__dirname,'views','change-password.jade') //
+    },
+/*    verificationComplete: {
+      view: path.join(__dirname,'views','verification_complete.jade') //
+    },
+    verificationEmailSent: {
+      view: path.join(__dirname,'views','verification_email_sent.jade') //
+    },
+    verificationFailed: {
+      view: path.join(__dirname,'views','verification_failed.jade') //
+    },*/
+    verifyEmail: {
+      view: path.join(__dirname,'views','verify.jade') //
+    }
+
+
+  },
+
 //  secretKey: 'FGHhsdjdfgh345#$%$&sdjdsnvjd#$^&%^SGdfgDFG',
   //expandCustomData: true,
   expand: {
@@ -50,6 +104,7 @@ var stormpathMiddleware = stormpath.init(app, {
 
 
 app.use(stormpathMiddleware);
+app.use('/images/', express.static(__dirname + '/images/'));
 
 app.get('/', function(req, res) {
   res.render('home', {

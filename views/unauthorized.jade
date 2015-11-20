@@ -1,0 +1,18 @@
+extends base
+
+block vars
+  - var title = 'Unauthorized'
+  - var description = "You aren't authorized to view this page!"
+  - var bodytag = 'login'
+
+block body
+  .container.custom-container
+    .va-wrapper
+      .view.login-view.container
+        .box.row
+          .email-password-area.col-xs-12.large.col-sm-12
+            .header
+              span.
+                לא מאושר.
+              p.
+                אינכם רשאים לראות דף זה. אנא צרו קשר עם מנהל האתר לעזרה.

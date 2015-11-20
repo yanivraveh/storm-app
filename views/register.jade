@@ -1,0 +1,41 @@
+extends base
+
+block vars
+  - var title = 'יצירת חשבון חדש'
+  - var description = 'Create a new account.'
+  - var bodytag = 'register'
+  - var registrationFields = stormpathConfig.web.register.fields
+  - var fieldOrder = stormpathConfig.web.register.fieldOrder
+  - var orderedFields = []
+
+block body
+  .container.custom-container
+    .va-wrapper
+      .view.registration-view.container
+        .box.row
+          .col-sm-12
+            .header
+              span יצירת חשבון חדש
+
+            if errors
+              .alert.alert-danger
+                each error in errors
+                  p #{error.message}
+
+            form.registration-form.form-horizontal.sp-form(method='post', role='form')
+              each fieldName in fieldOrder
+                each fieldObject, key in registrationFields
+                  if fieldObject.name === fieldName
+                    - orderedFields.push(fieldObject)
+
+              each field in orderedFields
+                div(form-group='true', class='form-group group-#{field.name}')
+
+                  .col-sm-8
+                    - var value = form ? form[field.name] : '';
+                    input.form-control(placeholder=field.placeholder, name=field.name, value=value, required=field.required, type=field.type)
+                  label.col-sm-4 #{field.placeholder}
+
+              button.btn.btn-register.btn-sp-green(type='submit') צור חשבון
+
+        a.to-login(href=stormpathConfig.web.login.uri) יש לכם חשבון? התחברו כאן

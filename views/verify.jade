@@ -1,0 +1,56 @@
+extends base
+
+block vars
+  - var title = 'Resend Account Verification Email?'
+  - var description = 'Didn\'t receive your account verification email? No worries!'
+  - var bodytag = 'login'
+
+block body
+  .container.custom-container
+    .va-wrapper
+      .view.login-view.container
+        if invalid_sp_token
+          .row
+            .alert.alert-warning.invalid-sp-token-warning
+              p.
+                קישור האימות אינו תקף עוד. אנא שלחו בקשה מחודשת.
+
+        .box.row
+
+          if !sptoken
+            .email-password-area.col-xs-12.large.col-sm-12
+              if invalid_sp_token
+                p &nbsp;
+              else
+                .header
+                  span.
+                    לא קיבלתם הודעה לאימות כתובת המייל?
+              p.
+                הקלידו את כתובת המייל שלכם ונשלח אליכם הודעה לאימות. עליכם לפתוח את ההודעה וללחוץ
+                על הקישור כדי להמשיך. אם אינכם רואים את ההודעה אנא בידקו בספאם.
+
+              if error
+                .alert.alert-danger.bad-login.form-error
+                  p #{error}
+
+              if formErrors
+                .alert.alert-danger.bad-login
+                  each error in formErrors
+                    p #{error.error}
+
+              p &nbsp;
+
+              form.login-form.form-horizontal(method='post', role='form')
+                input(name='_csrf', type='hidden', value=csrfToken)
+
+                .form-group.group-email
+
+                  div.col-sm-8
+                    input.form-control(placeholder='Email', required='true', name='email', type='text')
+                  label.col-sm-4 אימייל
+
+                div.mySubmit
+                  button.login.btn.btn-login.btn-sp-green(type='submit') שלח
+
+        if stormpathConfig.web.login.enabled
+          a.forgot(href="#{stormpathConfig.web.login.uri}") בחזרה לדף ההתחברות

@@ -2,21 +2,32 @@ html
   head
     title=title
     link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
-  body
+    meta(charset='utf-8')
+  body(dir='rtl')
     div.container
       div.jumbotron
-        h1 Hello!
+        h1 מחולל הדו"חות א.מ.ל.
 
         if user
-          p Welcome, #{user.fullName}
-          p
-            a.small(href="profile") Edit my profile
-          a.btn.btn-primary(href="/logout") Logout
+          p שלום, #{user.fullName} &nbsp;
+            a.small(href="profile") (ערוך את הפרופיל שלי)
+
+
+          p הזמנת דו"ח:
+          form(action='https://www.paypal.com/cgi-bin/webscr', method='post', target='_top')
+            input(type='hidden', name='cmd', value='_s-xclick')
+            input(type='hidden', name='hosted_button_id', value='LZ54TGVF29X3Q')
+            input(type='image', src='/images/paypal-product.png', border='0', name='submit', alt='PayPal - The safer, easier way to pay\
+            online!', width='235')
+            img(alt='', border='0', src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif', width='1', height='1')
+
+          a.btn.btn-primary(href="/logout") התנתק
+
         else
-          p Welcome to my app, ready to get started?
+          p ברוכים הבאים למחולל הדו"חות א.מ.ל.
           p
-            a.btn.btn-primary(href="/login") Login now
+            a.btn.btn-primary(href="/login") התחבר
           p
-            span.small Don't have an account?
+            span.small עוד לא נרשמתם?
             span &nbsp;
-            a.small(href="/register") Register now
+            a.small(href="/register") הירשמו כעת
