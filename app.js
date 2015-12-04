@@ -105,10 +105,14 @@ var stormpathMiddleware = stormpath.init(app, {
 
 app.use(stormpathMiddleware);
 app.use('/images/', express.static(__dirname + '/images/'));
+app.use('/css/', express.static(__dirname + '/css/'));
+app.use('/js/', express.static(__dirname + '/js/'));
+app.use('/img/', express.static(__dirname + '/img/'));
+app.use('/fonts/', express.static(__dirname + '/fonts/'));
 
 app.get('/', function(req, res) {
   res.render('home', {
-    title: 'Welcome'
+    title: 'מערכת א.מ.ל.'
   });
 });
 

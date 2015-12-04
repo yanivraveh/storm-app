@@ -1,33 +1,135 @@
+doctype html
 html
   head
     title=title
-    link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
+    // link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
     meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0')
+    link(rel='stylesheet', type='text/css', href='css/bootstrap.css')
+    link(rel='stylesheet', type='text/css', href='css/owl.transitions.css')
+    link(rel='stylesheet', type='text/css', href='css/owl.carousel.css')
+    link(rel='stylesheet', type='text/css', href='css/animate.css')
+    link(rel='stylesheet', type='text/css', href='css/main.css')
+    script(type='text/javascript', src='js/jquery.js')
+    script(type='text/javascript', src='js/ajaxchimp.js')
+    script(type='text/javascript', src='js/scrollTo.js')
+    script(type='text/javascript', src='js/owl.carousel.min.js')
+    script(type='text/javascript', src='js/wow.js')
+    script(type='text/javascript', src='js/parallax.js')
+    script(type='text/javascript', src='js/nicescroll.js')
+    script(type='text/javascript', src='js/main.js')
+    //script(type='text/javascript', src='js/toggle.js')
+    
   body(dir='rtl')
-    div.container
-      div.jumbotron
-        h1 מחולל הדו"חות א.מ.ל.
+    if user 
+      header
+        .container
+          .logo.pull-right.animated.wow.fadeInRight
+            img(src='img/aml_logo.png', alt='', title='')
+          nav.pull-right
+            ul.list-unstyled
+              li.animated.wow.fadeInLeft(data-wow-delay='0s')
+                a(href='/logout') התנתק
 
-        if user
-          p שלום, #{user.fullName} &nbsp;
-            a.small(href="profile") (ערוך את הפרופיל שלי)
+              //- li.animated.wow.fadeInLeft(data-wow-delay='.1s')
+              //-   a(href='#app_features') ערוך נתונים
+              //- li.animated.wow.fadeInLeft(data-wow-delay='.2s')
+              //-   a(href='#about') הזמן שירות
+          .social.pull-left
+            ul.list-unstyled
+              li.animated.wow.fadeInLeft(data-wow-delay='.2s')
+                a(href='#')
+                  img(src='img/facebook.png', alt='', title='')
+              li.animated.wow.fadeInLeft(data-wow-delay='.1s')
+                a(href='#')
+                  img(src='img/twitter.png', alt='', title='')
+              li.animated.wow.fadeInLeft(data-wow-delay='0s')
+                a(href='#')
+                  img(src='img/google.png', alt='', title='')
+          span.burger_icon menu
+      // End Header Section
+      // Hero Section
+      section#hero.hero(dir='rtl')
+        .container
+          .caption
+            h1.text-uppercase.animated.wow.fadeInLeft מחולל הדו"חות א.מ.ל.
+            p.text-lowercase.animated.wow.fadeInLeft שלום, #{user.fullName} &nbsp;
+            a.app_store_btn.text-uppercase.animated.wow.fadeInLeft(href='http://pixelhint.com/capture-free-responsive-bootstrap-app-landing-page-theme')
+              // <i class="iphone_icon"></i>
+              span עדכן נתונים
+            a.app_store_btn.text-uppercase.animated.wow.fadeInLeft(href='http://pixelhint.com/capture-free-responsive-bootstrap-app-landing-page-theme')
+              // <i class="android_icon"></i>
+              span הזמן שירות
+      // End Hero Section
+      // Featured On Section
+      section.featured_on
+        .container
+          ul.list-unstyled.text-center.clearfix
+            li.col-xs-6.col-sm-6.col-md-3.animated.wow.fadeInDown(data-wow-delay='.4s')
+              <img src="img/ida_big.png" alt="" title="">
+            li.col-xs-6.col-sm-6.col-md-3.animated.wow.fadeInDown(data-wow-delay='.3s')
+              <img src="img/lawoffice_big.png" alt="" title="">
+            li.col-xs-6.col-sm-6.col-md-3.animated.wow.fadeInDown(data-wow-delay='.2s')
+              <img src="img/iml_logo_big2.png" alt="" title="">
+            li.col-xs-6.col-sm-6.col-md-3.animated.wow.fadeInDown
+              <img src="img/mof_big.png" alt="" title="">
+      // End Featured On Section
+    else
+      header
+        .container
+          .logo.pull-right.animated.wow.fadeInRight
+            img(src='img/aml_logo.png', alt='', title='')
+          nav.pull-right
+            ul.list-unstyled
+              li.animated.wow.fadeInLeft(data-wow-delay='.1s')
+                a(href='/login')
+                  span התחברות
+              li.animated.wow.fadeInLeft(data-wow-delay='0s')
+                a(href='/register')
+                  span הרשמה למערכת
+              //- li.animated.wow.fadeInLeft(data-wow-delay='.2s')
+              //-   a(href='#testimonials') התנתק
+          .social.pull-left
+            ul.list-unstyled
+              li.animated.wow.fadeInLeft(data-wow-delay='.2s')
+                a(href='#')
+                  img(src='img/facebook.png', alt='', title='')
+              li.animated.wow.fadeInLeft(data-wow-delay='.1s')
+                a(href='#')
+                  img(src='img/twitter.png', alt='', title='')
+              li.animated.wow.fadeInLeft(data-wow-delay='0s')
+                a(href='#')
+                  img(src='img/google.png', alt='', title='')
+          span.burger_icon menu
+      // End Header Section
+      // Hero Section
+      section#hero.hero(dir='rtl')
+        .container
+          .caption
+            h1.text-uppercase.animated.wow.fadeInLeft מחולל הדו"חות א.מ.ל.
+            p.text-lowercase.animated.wow.fadeInLeft ברוכים הבאים!
+            //button(type='button', onclick='toggle("loginform")') התחבר
+            //button(type='button', id='loginform') JVJVJV
+            //- a.app_store_btn.text-uppercase.animated.wow.fadeInLeft(href='/login')
+            //-   // <i class="iphone_icon"></i>
+            //-   span התחבר
+            //a.app_store_btn.text-uppercase.animated.wow.fadeInLeft(href='http://pixelhint.com/capture-free-responsive-bootstrap-app-landing-page-theme')
+              // <i class="android_icon"></i>
+              //span הזמן שירות
+      // End Hero Section
+      // Featured On Section
+      section.featured_on
+        .container
+          ul.list-unstyled.text-center.clearfix
+            li.col-xs-6.col-sm-6.col-md-3.animated.wow.fadeInDown(data-wow-delay='.4s')
+              <img src="img/ida_big.png" alt="" title="">
+            li.col-xs-6.col-sm-6.col-md-3.animated.wow.fadeInDown(data-wow-delay='.3s')
+              <img src="img/lawoffice_big.png" alt="" title="">
+            li.col-xs-6.col-sm-6.col-md-3.animated.wow.fadeInDown(data-wow-delay='.2s')
+              <img src="img/iml_logo_big2.png" alt="" title="">
+            li.col-xs-6.col-sm-6.col-md-3.animated.wow.fadeInDown
+              <img src="img/mof_big.png" alt="" title="">
+      // End Featured On Section
 
-
-          p הזמנת דו"ח:
-          form(action='https://www.paypal.com/cgi-bin/webscr', method='post', target='_top')
-            input(type='hidden', name='cmd', value='_s-xclick')
-            input(type='hidden', name='hosted_button_id', value='LZ54TGVF29X3Q')
-            input(type='image', src='/images/paypal-product.png', border='0', name='submit', alt='PayPal - The safer, easier way to pay\
-            online!', width='235')
-            img(alt='', border='0', src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif', width='1', height='1')
-
-          a.btn.btn-primary(href="/logout") התנתק
-
-        else
-          p ברוכים הבאים למחולל הדו"חות א.מ.ל.
-          p
-            a.btn.btn-primary(href="/login") התחבר
-          p
-            span.small עוד לא נרשמתם?
-            span &nbsp;
-            a.small(href="/register") הירשמו כעת
+        
+      script(type='text/javascript', src='js/toggle.js')

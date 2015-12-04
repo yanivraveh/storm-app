@@ -7,18 +7,43 @@ doctype html
 html(class='no-js', lang='en')
   | <!--<![endif]-->
   head
-    meta(charset='utf-8')
+    //meta(charset='utf-8')
     title #{title}
-    meta(content='#{description}', name='description')
-    meta(content='width=device-width', name='viewport')
+    //meta(content='#{description}', name='description')
+    //meta(content='width=device-width', name='viewport')
     link(href='//fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600italic,600,700italic,700,800italic,800', rel='stylesheet', type='text/css')
     link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0')
+    link(rel='stylesheet', type='text/css', href='css/bootstrap.css')
+    link(rel='stylesheet', type='text/css', href='css/owl.transitions.css')
+    link(rel='stylesheet', type='text/css', href='css/owl.carousel.css')
+    link(rel='stylesheet', type='text/css', href='css/animate.css')
+    link(rel='stylesheet', type='text/css', href='css/main.css')
+    script(type='text/javascript', src='js/jquery.js')
+    script(type='text/javascript', src='js/ajaxchimp.js')
+    script(type='text/javascript', src='js/scrollTo.js')
+    script(type='text/javascript', src='js/owl.carousel.min.js')
+    script(type='text/javascript', src='js/wow.js')
+    script(type='text/javascript', src='js/parallax.js')
+    script(type='text/javascript', src='js/nicescroll.js')
+    script(type='text/javascript', src='js/main.js')
+    script(type='text/javascript', src='js/toggle.js')    
+    
     style.
       html,
       body {
         height: 100%;
+        width: 100%;
       }
-
+      
+      .center {
+        //float: none;
+        // margin-left: auto;
+        //margin-right: auto;
+        
+      }
+      
       @media (max-width: 767px) {
         html,
         body {
@@ -27,8 +52,8 @@ html(class='no-js', lang='en')
       }
 
       body {
-        margin-left: auto;
-        margin-right: auto;
+        //margin-left: auto;
+        //margin-right: auto;
       }
 
       body,
@@ -50,9 +75,18 @@ html(class='no-js', lang='en')
         line-height: 21px;
       }
 
-      .container {
+      .sp_container {
         max-width: 620px;
-      }
+        //position: relative;
+      }  
+      
+      .trans{
+          background-color:transparent;
+      }  
+        
+        
+        
+      
 
       .mySubmit {
         float: left;
@@ -223,9 +257,9 @@ html(class='no-js', lang='en')
       }
 
       .box {
-        box-shadow: 0 0px 3px 1px rgba(0, 0, 0, 0.1);
-        border: 1px solid #cacaca;
-        border-radius: 3px;
+        //box-shadow: 0 0px 3px 1px rgba(0, 0, 0, 0.1);
+        //border: 1px solid #cacaca;
+        //border-radius: 3px;
         padding: 0 30px;
       }
 
@@ -272,7 +306,7 @@ html(class='no-js', lang='en')
       }
 
       .login-view .box {
-        background-color: #f6f6f6;
+        //background-color: #000000;
         padding: 0;
       }
 
@@ -285,7 +319,7 @@ html(class='no-js', lang='en')
       }
 
       .login-view .email-password-area {
-        background-color: white;
+        //background-color: white;
         border-top-left-radius: 3px;
         border-bottom-left-radius: 3px;
       }
@@ -329,7 +363,7 @@ html(class='no-js', lang='en')
 
       @media (min-width: 767px) {
         .login-view .email-password-area.small {
-          border-right: 1px solid #cacaca;
+          //border-right: 1px solid #cacaca;
         }
 
         .login-view .email-password-area.small .group-email {
@@ -368,7 +402,8 @@ html(class='no-js', lang='en')
         padding: 0 20px;
         position: relative;
         padding-bottom: 20px;
-        background-color: #f6f6f6;
+        
+        //background-color: #f6f6f6;
       }
 
       .login-view .social-area .header {
