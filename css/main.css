@@ -129,7 +129,7 @@ header .burger_icon{
 	padding: 5px 10px;
 	text-transform: uppercase;
 
-	color: #43b779;
+	color: #a4446d;
 	font-family: "open_regular", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 
@@ -145,7 +145,7 @@ header .burger_icon:hover{
 }
 
 header .burger_icon.active{
-	background: #359663;
+	background: #a4446d;
 	color: #ffffff;
 }
 
@@ -648,10 +648,10 @@ a.app_link{
 	width: 100%;
 	padding: 100px 0;
 	text-align: center;
-	background-image: -moz-linear-gradient(bottom, #47ad76 0%, #47ad76 0.27%, #40c27d 99.46%, #40c27d 100%);
-	background-image: -o-linear-gradient(bottom, #47ad76 0%, #47ad76 0.27%, #40c27d 99.46%, #40c27d 100%);
-	background-image: -webkit-linear-gradient(bottom, #47ad76 0%, #47ad76 0.27%, #40c27d 99.46%, #40c27d 100%);
-	background-image: linear-gradient(bottom, #47ad76 0%, #47ad76 0.27%, #40c27d 99.46%, #40c27d 100%);
+	background-image: -moz-linear-gradient(bottom, #a4446d 0%, #a4446d 0.27%, #40c27d 99.46%, #40c27d 100%);
+	background-image: -o-linear-gradient(bottom, #a4446d 0%, #a4446d 0.27%, #40c27d 99.46%, #40c27d 100%);
+	background-image: -webkit-linear-gradient(bottom, #a4446d 0%, #a4446d 0.27%, #40c27d 99.46%, #40c27d 100%);
+	background-image: linear-gradient(bottom, #a4446d 0%, #a4446d 0.27%, #40c27d 99.46%, #40c27d 100%);
 }
 
 .sub_box .cta_text{
@@ -805,7 +805,7 @@ footer .copyright a{
 	header nav{
 		width: 100%;
 		float: none;
-		background: #47ad76;
+		background: #a4446d;
 		position: absolute;
 		margin-top: 130px;
 		left: 0;
@@ -828,11 +828,11 @@ footer .copyright a{
 		display: block;
 		width: 100%;
 		padding: 20px 0;
-		border-bottom: 1px solid #389965;
+		border-bottom: 1px solid #a4446d;
 	}
 
 	header nav li:first-child a{
-		border-top: 1px solid #389965;
+		border-top: 1px solid #a4446d;
 	}
 
 	header .social{
