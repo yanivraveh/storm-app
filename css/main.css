@@ -216,7 +216,7 @@ header .social li:first-child{
 
 .hero .caption{
 	position: absolute;
-	max-width: 550px;
+	/*max-width: 550px;*/
 	margin-left: 80px;
 	top: 50%;
 	transform:translate(0,-50%);
